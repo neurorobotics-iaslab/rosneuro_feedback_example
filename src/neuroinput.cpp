@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
 	ros::Rate r(RATELOOP);
 	rosneuro_msgs::NeuroOutput msg;
 
-	msg.class_labels = std::vector<std::string>({"class1", "class2"});
+	msg.decoder.classes = std::vector<int>({769, 770});
 	msg.softpredict.data = std::vector<float>(2);
 
 	pub = nh.advertise<rosneuro_msgs::NeuroOutput>("/output", 1);
